@@ -1,0 +1,24 @@
+language: python
+python:
+- '2.7'
+install:
+- pip install -r requirements.txt
+- pip install -r requirements_test.txt
+- pip install python-coveralls
+script: 
+- source ./environment_test.sh
+- py.test --cov themint tests/ --cov-report=term --cov-report=html
+after_success:
+  - coveralls
+before_deploy:
+- if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+deploy:
+  provider: heroku
+  buildpack: python
+  api_key:
+    secure: TetTLz4NydL3/wgDYVCpJVm4CUUZYTBterJu06u+adBpuDql5fFENyeeUpDMMNjori/CeFa8HozdWCwXTlB18Na7O1t7304BFbOySVnTUnCcDT7ykU5UyNg3wbacg9jXzLxTGWwmdquPulZKmYa6/R5XPmGkjCAvzq7fzKKdmDE=
+  strategy: git
+  app: lr-mint
+  on:
+    repo: LandRegistry/mint
+    branch: master
