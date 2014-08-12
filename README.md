@@ -1,10 +1,17 @@
 #decision
 
 Eventually this wants replacing with something like cucumber tests, 
-but for now, a few simple functions that return some codes.
+but for now it is just a few simple functions that return some codes.
 
 Multiple codes can be returned, up to the client to decide what to do with them.
+
 Return codes look like:
+
+{
+  "decision":[
+    {"code": 100},
+  ]
+}
 
 ## Codes
 
