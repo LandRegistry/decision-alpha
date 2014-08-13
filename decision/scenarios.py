@@ -1,9 +1,6 @@
-SEND_TO_CASEWORK = 100
-SEND_TO_CHECKING = 200
-
-
-def change_name_country(country_of_marriage):
-    if country_of_marriage == 'UK':
-        return SEND_TO_CASEWORK
-    else:
-        return SEND_TO_CHECKING
+def check_change_name_marriage(data):
+	iso_country_code = data.get('iso-country-code', None) 
+	if iso_country_code == 'GB':
+		return True
+	else:
+		return False

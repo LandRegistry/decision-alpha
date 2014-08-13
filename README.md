@@ -5,11 +5,19 @@ but for now it is just a few simple functions that return some codes.
 
 Multiple codes can be returned, up to the client to decide what to do with them.
 
+##Request data format
+{
+	"action": "change name",
+	"data": {"country": "UK", "postcode":""},
+	"context": {"session-id":"1234"}
+}
+
+##Response data format
 Return codes look like:
 
 {
   "decision":[
-    {"code": 100},
+    {"code":XXX, "message":"YYY"}
   ]
 }
 
