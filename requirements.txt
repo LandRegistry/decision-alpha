@@ -1,2 +1,4 @@
+eventlet==0.14.0
+gunicorn==18.0
 Flask==0.10.1
 raven==5.0.0
