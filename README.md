@@ -1,5 +1,10 @@
 #decision
 
+[![Build Status](https://magnum.travis-ci.com/LandRegistry/decision.svg?branch=master)](https://travis-ci.org/LandRegistry/casework-frontend)
+
+[![Coverage Status](https://img.shields.io/coveralls/LandRegistry/decision.svg)](https://coveralls.io/r/LandRegistry/casework-frontend)
+
+
 Eventually this wants replacing with something like cucumber tests, 
 but for now it is just a few simple functions that return some codes.
 
