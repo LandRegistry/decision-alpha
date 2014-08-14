@@ -15,3 +15,9 @@ if 'SENTRY_DSN' in os.environ:
 if not app.debug:
     app.logger.addHandler(logging.StreamHandler())
     app.logger.setLevel(logging.INFO)
+
+# Validate config 
+for property_to_check in ['CASEWORK_URL', 'CHECK_URL']:
+	if not app.config[property_to_check]:
+		raise Exception('Missing %r configuation property.' % (property_to_check))
+	

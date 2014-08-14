@@ -1,3 +1,3 @@
 export SETTINGS='config.DevelopmentConfig'
-export CASEWORK_URL='http://localhost:8004/casework'
-export CHECK_URL='http://localhost:8004/check'
+export CASEWORK_URL='http://casework-frontend.landregistry.local/casework'
+export CHECK_URL='http://casework-frontend.landregistry.local/checks'

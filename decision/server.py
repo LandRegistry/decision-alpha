@@ -11,5 +11,4 @@ def index():
 def decision():
     if request.method == 'POST':
         # validate json
-        
         return perform_action(request.json, app.config['CASEWORK_URL'], app.config['CHECK_URL'])
