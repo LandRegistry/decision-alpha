@@ -1,5 +1,6 @@
 import unittest
 import json
+import flask
 from decision import server
 
 class DecisionTestCase(unittest.TestCase):
@@ -19,8 +20,7 @@ class DecisionTestCase(unittest.TestCase):
         rv = self.client.get('/doesnotexist')
         assert rv.status_code == 404
 
-    def test_change_name(self):
-
+    def test_change_name_returns_successful_response(self):
         data = {
                 "action": "change-name-marriage",
                 "data": {
@@ -37,4 +37,20 @@ class DecisionTestCase(unittest.TestCase):
                                 content_type='application/json')
 
         assert rv.status_code == 200
+        assert rv.headers.get('content-type') == 'application/json'
+
+    def test_change_name_returns_bad_request(self):
+        data = {
+                "action": "change-name-marriage",
+                "context": {
+                    "session-id": "123456",
+                    "transaction-id": "ABCDEFG"
+                }
+            }
+
+        rv = self.client.post('/decisions',
+                                data=json.dumps(data),
+                                content_type='application/json')
+
+        assert rv.status_code == 400
         assert rv.headers.get('content-type') == 'application/json'
