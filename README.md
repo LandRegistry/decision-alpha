@@ -1,8 +1,8 @@
 #decision
 
-[![Build Status](https://magnum.travis-ci.com/LandRegistry/decision.svg?branch=master)](https://travis-ci.org/LandRegistry/casework-frontend)
+[![Build Status](https://magnum.travis-ci.com/LandRegistry/decision.svg?branch=master)](https://magnum.travis-ci.com/LandRegistry/decision)
 
-[![Coverage Status](https://img.shields.io/coveralls/LandRegistry/decision.svg)](https://coveralls.io/r/LandRegistry/casework-frontend)
+[![Coverage Status](https://img.shields.io/coveralls/LandRegistry/decision.svg)](https://coveralls.io/r/LandRegistry/decision)
 
 
 Eventually this wants replacing with something like cucumber tests, 
