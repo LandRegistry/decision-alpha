@@ -22,9 +22,9 @@ class DecisionServiceTestCase(unittest.TestCase):
                         }
                     }
 
-            action_response = decision_service.perform_action(valid_data)
+            action_response = decision_service.perform_action(valid_data, 'casework_url', 'check_url')
             assert action_response.status_code == 200
-            assert json.loads(action_response.data) == { "action": "send-to-casework", "signed-token": "1234", "transaction-id": "ABCDEFG"  }
+            assert json.loads(action_response.data) == { "url": "casework_url", "signed-token": "1234", "transaction-id": "ABCDEFG"  }
     
     def test_perform_action_returns_200_and_send_to_check_when_country_code_is_not_GB(self):
          with self.app.test_request_context():
@@ -38,9 +38,9 @@ class DecisionServiceTestCase(unittest.TestCase):
                         "transaction-id": "ABCDEFG"
                     }
                 }
-            action_response = decision_service.perform_action(bad_data)
+            action_response = decision_service.perform_action(bad_data, 'casework_url', 'check_url')
             assert action_response.status_code == 200
-            assert json.loads(action_response.data) == { "action": "send-to-check", "signed-token": "1234", "transaction-id": "ABCDEFG"  }
+            assert json.loads(action_response.data) == { "url": "check_url", "signed-token": "1234", "transaction-id": "ABCDEFG"  }
 
     def test_perform_action_returns_200_and_send_to_check_when_missing_country_code(self):
          with self.app.test_request_context():
@@ -54,9 +54,9 @@ class DecisionServiceTestCase(unittest.TestCase):
                         "transaction-id": "ABCDEFG"
                     }
                 }
-            action_response = decision_service.perform_action(bad_data)
+            action_response = decision_service.perform_action(bad_data, 'casework_url', 'check_url')
             assert action_response.status_code == 200
-            assert json.loads(action_response.data) == { "action": "send-to-check", "signed-token": "1234", "transaction-id": "ABCDEFG"  }
+            assert json.loads(action_response.data) == { "url": "check_url", "signed-token": "1234", "transaction-id": "ABCDEFG"  }
 
     def test_perform_action_returns_400_when_data_is_missing(self):
          with self.app.test_request_context():
@@ -70,7 +70,7 @@ class DecisionServiceTestCase(unittest.TestCase):
                         "transaction-id": "ABCDEFG"
                     }
                 }
-            action_response = decision_service.perform_action(bad_data)
+            action_response = decision_service.perform_action(bad_data, 'casework_url', 'check_url')
             assert action_response.status_code == 400
             assert json.loads(action_response.data) == {'error_message': 'Missing country code' }
 
@@ -86,7 +86,7 @@ class DecisionServiceTestCase(unittest.TestCase):
                         "transaction-id": "ABCDEFG"
                     }
                 }
-            action_response = decision_service.perform_action(bad_data)
+            action_response = decision_service.perform_action(bad_data, 'casework_url', 'check_url')
             assert action_response.status_code == 400
             assert json.loads(action_response.data) == {'error_message': 'Action not found' }
 
