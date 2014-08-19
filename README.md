@@ -13,7 +13,7 @@ Multiple codes can be returned, up to the client to decide what to do with them.
 ##Request data format
 {
 	"action": "change name",
-	"data": {"country": "UK", "postcode":""},
+	"data": {"country": "GB", "postcode":""},
 	"context": {"session-id":"1234"}
 }
 

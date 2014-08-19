@@ -1,4 +1,4 @@
-from flask import request, jsonify, Response
+from flask import jsonify, Response
 import json
 import scenarios
 

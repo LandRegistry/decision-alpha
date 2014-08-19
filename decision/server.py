@@ -1,7 +1,6 @@
 from flask import request
 from decision import app
 from decision_service import perform_action
-import json
 
 @app.route('/')
 def index():
