@@ -1,6 +1,9 @@
 from flask import request
 from decision import app
 from decision_service import perform_action
+from healthcheck import HealthCheck
+
+HealthCheck(app, '/health')
 
 @app.route('/')
 def index():
