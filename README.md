@@ -12,9 +12,9 @@ Multiple codes can be returned, up to the client to decide what to do with them.
 
 ##Request data format
 {
-	"action": "change name",
-	"data": {"country": "GB", "postcode":""},
-	"context": {"session-id":"1234"}
+	"action": "change-name-marriage",
+	"data": {"iso-country-country": "GB"},
+	"context": {"session-id":"1234", "transaction-id":"ABCDE"}
 }
 
 ##Response data format

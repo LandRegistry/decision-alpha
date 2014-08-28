@@ -9,5 +9,4 @@ def index():
 
 @app.route('/decisions', methods=['POST'])
 def decision():
-    if request.method == 'POST':
-        return perform_action(request.json, app.config['CASEWORK_URL'], app.config['CHECK_URL'])
+   return perform_action(request.json, app.config['CASEWORK_URL'], app.config['CHECK_URL'])
