@@ -1,5 +1,6 @@
-eventlet==0.14.0
-gunicorn==18.0
-Flask==0.10.1
-raven==5.0.0
 -e git+https://github.com/Runscope/healthcheck.git@9d661a916f3ab630ae21e014758aa2f21fd40097#egg=healthcheck
+blinker
+eventlet
+Flask
+gunicorn
+raven
