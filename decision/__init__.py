@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 app.config.from_object(os.environ.get('SETTINGS'))
 
-app.logger.info("\nConfiguration\n%s\n" % app.config)
+app.logger.debug("\nConfiguration\n%s\n" % app.config)
 
 # Sentry exception reporting
 if 'SENTRY_DSN' in os.environ:
@@ -16,8 +16,8 @@ if not app.debug:
     app.logger.addHandler(logging.StreamHandler())
     app.logger.setLevel(logging.INFO)
 
-# Validate config 
+# Validate config
 for property_to_check in ['CASEWORK_URL', 'CHECK_URL']:
 	if not app.config[property_to_check]:
 		raise Exception('Missing %r configuation property.' % (property_to_check))
-	
+
