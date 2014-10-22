@@ -1,8 +1,6 @@
 #decision
 
-[![Build Status](https://magnum.travis-ci.com/LandRegistry/decision.svg?branch=master)](https://magnum.travis-ci.com/LandRegistry/decision)
-
-[![Coverage Status](https://img.shields.io/coveralls/LandRegistry/decision.svg)](https://coveralls.io/r/LandRegistry/decision)
+[![Build Status](https://magnum.travis-ci.com/LandRegistry/decision.svg?token=N9pcG7F7VybLxV2xrpVh&branch=master)](https://magnum.travis-ci.com/LandRegistry/decision)
 
 
 Eventually this wants replacing with something like cucumber tests, 
