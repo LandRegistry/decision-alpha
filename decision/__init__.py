@@ -6,6 +6,9 @@ app = Flask(__name__)
 
 app.config.from_object(os.environ.get('SETTINGS'))
 
+from werkzeug.contrib.fixers import ProxyFix
+app.wsgi_app = ProxyFix(app.wsgi_app)
+
 app.logger.debug("\nConfiguration\n%s\n" % app.config)
 
 # Sentry exception reporting
